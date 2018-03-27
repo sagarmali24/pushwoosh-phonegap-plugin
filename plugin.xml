@@ -21,7 +21,6 @@
 	<preference name="IOS_FOREGROUND_ALERT_TYPE" default="BANNER" />
 	<preference name="ANDROID_FOREGROUND_PUSH" default="true" />
 	
-
 	<js-module src="www/PushNotification.js" name="PushNotification">
 			<clobbers target="plugins.pushNotification" />
 	</js-module>
@@ -115,6 +114,12 @@
 				<param name="android-package" value="com.pushwoosh.plugin.pushnotifications.PushNotifications" onload="true" />
 			</feature>
 		</config-file>
+		
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="PushNotification">
+				<param name="Pushwoosh_ALERT_TYPE" value="YES"/>
+			</feature>
+		</config-file>
 
 		<source-file src="src/android/src/com/pushwoosh/plugin/pushnotifications/PushNotifications.java"
 						target-dir="src/com/pushwoosh/plugin/pushnotifications" />
@@ -142,12 +147,12 @@
 			</feature>
 		</config-file>
 		
-		<config-file target="config.xml" parent="/*">
+		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="PushNotification">
 				<param name="Pushwoosh_ALERT_TYPE" value="YES"/>
 			</feature>
 		</config-file>
-
+		
 		<config-file>
 			<access origin="*.pushwoosh.com" />
 		</config-file>
