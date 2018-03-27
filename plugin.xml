@@ -98,7 +98,7 @@
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
 			<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 			<meta-data android:name="PW_LOG_LEVEL" android:value="$LOG_LEVEL" />
-			<meta-data android:name="PW_NO_BROADCAST_PUSH" android:value="$ANDROID_FOREGROUND_PUSH" />
+			<meta-data android:name="PW_NO_BROADCAST_PUSH" android:value="true" />
 
 			<receiver android:name="com.google.android.gms.gcm.GcmReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
 				<intent-filter>
@@ -114,13 +114,7 @@
 				<param name="android-package" value="com.pushwoosh.plugin.pushnotifications.PushNotifications" onload="true" />
 			</feature>
 		</config-file>
-		
-		<config-file target="res/xml/config.xml" parent="/*">
-			<feature name="PushNotification">
-				<param name="Pushwoosh_ALERT_TYPE" value="YES"/>
-			</feature>
-		</config-file>
-
+	
 		<source-file src="src/android/src/com/pushwoosh/plugin/pushnotifications/PushNotifications.java"
 						target-dir="src/com/pushwoosh/plugin/pushnotifications" />
 
@@ -144,12 +138,6 @@
 		<config-file target="config.xml" parent="/*">
 			<feature name="PushNotification">
 				<param name="ios-package" value="PushNotification"/>
-			</feature>
-		</config-file>
-		
-		<config-file target="config.xml" parent="/*">
-			<feature name="PushNotification">
-				<param name="Pushwoosh_ALERT_TYPE" value="YES"/>
 			</feature>
 		</config-file>
 		
